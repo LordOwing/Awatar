@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView usersRecyclerView;
@@ -31,8 +34,11 @@ public class MainActivity extends AppCompatActivity {
         users.add(new User("Maria", "Wiśniewska", R.drawable.avatar4));
         users.add(new User("Krzysztof", "Wójcik", R.drawable.avatar5));
 
+
         UserAdapter adapter = new UserAdapter(users);
         usersRecyclerView.setAdapter(adapter);
-        usersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        usersRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 }
